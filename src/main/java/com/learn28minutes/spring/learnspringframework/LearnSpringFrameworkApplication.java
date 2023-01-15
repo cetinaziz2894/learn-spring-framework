@@ -1,5 +1,6 @@
 package com.learn28minutes.spring.learnspringframework;
 
+import com.learn28minutes.spring.learnspringframework.enterprise.example.web.MyWebController;
 import com.learn28minutes.spring.learnspringframework.game.GameRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +17,10 @@ public class LearnSpringFrameworkApplication {
         //GameRunner runner = new GameRunner(game);
         GameRunner runner = context.getBean(GameRunner.class);
         runner.run();
+
+        MyWebController controller = context.getBean(MyWebController.class);
+        System.out.println(controller.returnValueFromBusinessService());
+
     }
 
 }
